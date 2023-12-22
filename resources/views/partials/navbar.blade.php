@@ -14,10 +14,18 @@
                     <a href="#">About</a>
                 </li>
             </menu>
-            <a href={{ route('login') }}
-                class="bg-[#eb4432] text-[#171923] text-xl hover:bg-[#d86154] transition-colors duration-400  py-2 pt-1 px-5 rounded-lg">
-                Login
-            </a>
+            @auth
+                <a href={{ route('dashboard') }}
+                    class="bg-[#eb4432] text-[#171923] text-xl hover:bg-[#d86154] transition-colors duration-400  py-2 pt-1 px-5 rounded-lg">
+                    DashBoard
+                </a>
+            @else
+                <a href={{ route('login') }}
+                    class="bg-[#eb4432] text-[#171923] text-xl hover:bg-[#d86154] transition-colors duration-400  py-2 pt-1 px-5 rounded-lg">
+                    Login
+                </a>
+            @endauth
+
         </div>
 
     </div>
